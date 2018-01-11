@@ -26,7 +26,7 @@
 
 
     function rerender() {
-        renderer = new GlRenderer(canvas, 400, true, img, function() {
+        renderer = new GlRenderer(canvas, vertices, true, img, function() {
             //renderTime(start);
         });
     }
@@ -34,7 +34,7 @@
     var shakeEvent = new Shake({threshold: 15});
     shakeEvent.start();
     window.addEventListener('shake', function(){
-        renderer = new GlRenderer(canvas, 400, true, img, function() {
+        renderer = new GlRenderer(canvas, vertices, true, img, function() {
             //renderTime(start);
         });
     }, false);

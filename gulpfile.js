@@ -47,7 +47,7 @@ gulp.task('compress', function() {
  * Build src js files
  */
 gulp.task('pro', function() {
-    gulp.src(['src/js/GlRenderer2.js', 'vendor/*.js'])
+    gulp.src(['src/js/GlRenderer.js', 'vendor/*.js'])
         .pipe(uglify())
         .pipe(concat('lib.js'))
         .pipe(gulp.dest('dist'));
