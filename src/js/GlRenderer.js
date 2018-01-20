@@ -39,7 +39,7 @@ GlRenderer.prototype.init = function() {
     this.finalScene.add(this.camera);
 
 
-    this.AmbientLight = new THREE.AmbientLight( 0xffffff, 0.9);
+    this.AmbientLight = new THREE.AmbientLight( 0xffffff, 0.7);
     this.finalScene.add(( this.AmbientLight ));
 
     var menor_longitud = this.canvas.height;
@@ -357,17 +357,17 @@ GlRenderer.prototype.renderTriangles = function(iw, ih) {
     this.renderFinal();
 }
 
-
+var light = 0.7;
 GlRenderer.prototype.renderFinal = function() {
 
     
-    if(window.mouse.w > 50 && light < 1){
-        light = light+0.05;
+    if(window.mouse.w > 8 && light < 1){
+        light = light+0.01;
         this.AmbientLight.intensity = light;
     }
-    if(window.mouse.w < -50 && light >= 0){
+    if(window.mouse.w < -8 && light >= 0){
 
-        light = light-0.05;
+        light = light-0.01;
         this.AmbientLight.intensity = light;
     }
 

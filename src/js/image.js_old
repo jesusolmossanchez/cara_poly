@@ -1,6 +1,5 @@
 (function () {
     var img = './src/img/paco.jpg';
-    //var img = './src/img/logo.jpg';
     var canvas = document.getElementById('canvas');
 
     // init canvas width to that of window
@@ -27,12 +26,6 @@
 
 
     function rerender() {
-
-        var vertices = 650;
-
-        if(window.innerWidth/2 < 700){
-            vertices = window.innerWidth/1.5;
-        }
         renderer = new GlRenderer(canvas, vertices, true, img, function() {
             //renderTime(start);
         });
@@ -41,12 +34,6 @@
     var shakeEvent = new Shake({threshold: 15});
     shakeEvent.start();
     window.addEventListener('shake', function(){
-        
-        var vertices = 650;
-
-        if(window.innerWidth/2 < 700){
-            vertices = window.innerWidth/1.5;
-        }
         renderer = new GlRenderer(canvas, vertices, true, img, function() {
             //renderTime(start);
         });
@@ -60,4 +47,3 @@
     //if(!("ondevicemotion" in window)){alert("Not Supported");}
 
 })();
-
